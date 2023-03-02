@@ -65,7 +65,7 @@ class userController {
                 return next(ApiError.internal('Password is incorrect!'))
             }
             const token = generateJwt(userLogin.id, userLogin.email, userLogin.role, userLogin.username)
-            req.user.id = userLogin.id
+            // req.user.id = userLogin.id
             res.json(token)
             next()
         } catch (error) {
